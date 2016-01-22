@@ -36,22 +36,22 @@ public class apples {
                 Scanner scanEnd = new Scanner(System.in);
                 Scanner scanAmount = new Scanner(System.in);
                 
-             // the users first input is in the start variable, 
+             // the users first input is in the min variable, 
                 System.out.println("You have entered the random number generator!");   
                 System.out.println("Please enter the number you wish your random number generator start point to be at:");   
                 min = scanStart.nextInt();
                 System.out.println("Please enter the number you wish your random number generator end point to end at:"); 
                 
-             // the second input is set to the amountUpTo variable, and validates that the number is greater than the start variable
+             //  and validates that the max number is greater than the min variable, if so - the second input is set to the max variable,
                 
                 preValidation = scanEnd.nextInt();
                 while(preValidation <= min)
                 {
                     System.out.println("Incoorect value, number must be above start value."); 
                     System.out.println("Please enter the number you wish your random number generator end point to end at:");
-                // makes the calculation of when to end the max limit of the random number generator
                     preValidation = scanEnd.nextInt();
                 }
+            // makes the calculation of when to end the max limit of the random number generator
                 max = preValidation - min + 1;
                 
                 
@@ -62,7 +62,7 @@ public class apples {
                 System.out.println("your random numbers are: ");
                 for(int counter = 1; counter <= numberOfRandom; counter++)
                 {
-                    // prints the line in the console of the random method within the tuna class accessed by the tunaObject, passing in the start number and the amountUpTo
+                // prints the line in the console of the random method within the tuna class accessed by the tunaObject, passing in the start number and the amountUpTo
                      System.out.println(number = tunaObject.random(min, max));
                 }
              break;
