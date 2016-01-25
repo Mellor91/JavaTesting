@@ -5,21 +5,20 @@
  */
 package javaapplication1;
 
-import java.util.Random;
 import java.util.Scanner;
 
 /**
  *
  * @author Mellor
  */
-public class apples {
+public class launcher {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) 
     {
-     int task = 1;
+     int task = 4;
         
      switch(task){
          case 1:
@@ -72,7 +71,82 @@ public class apples {
              
          case 2:
              
+             double amount, principle, rate, days;
+
+             Scanner principleScanner = new Scanner(System.in);
+             Scanner rateScanner = new Scanner(System.in);
+             Scanner daysScanner = new Scanner(System.in);
+             
+             System.out.println("You have entered the compound interest calculator:");   
+             System.out.println("Please enter the amount you will start at:");
+             principle = principleScanner.nextDouble();
+             
+             System.out.println("Please enter growth percentage per day:");
+             rate = rateScanner.nextDouble();
+             
+             System.out.println("Please enter the amount of days you calculate for:");
+             days = daysScanner.nextDouble();
+             
+             System.out.println("Your compound interest:");
+             for(int counter = 1;counter<=days;counter++)
+             {
+                 amount = principle*Math.pow(1 + rate,counter);
+                 System.out.println("Your total for day " + counter + " = " + amount);
+             }
+             
              break;
+             
+         case 3:
+             
+             System.out.println("You have entered the array table:"); 
+             System.out.println("Your array table is:"); 
+             int array[] = {12,23,34,45,56,67,78,89,121,232,343,454,565,676,787,898,909};
+             System.out.println("Index\tValue");
+             
+             for (int counter=0;counter<array.length;counter++)
+             {
+                 System.out.println(counter + "\t" + array[counter]);
+             }
+             break;
+             
+         case 4:
+             int preValid, fibAmount, first = 0, second = 1, start = 2;
+             Scanner scanFibAmount = new Scanner(System.in);
+             System.out.println("You have entered the fibonacci sequesnce:"); 
+             System.out.println("Please enter the amount of numbers you wish to go up to:"); 
+             
+             preValid = scanFibAmount.nextInt();
+             while(preValid<2)
+             {
+                 System.out.println("You must have at least 2 numbers in your fibonacci sequence:"); 
+                 preValid = scanFibAmount.nextInt();
+             }
+        
+             fibAmount = preValid;
+             int sequence[] = new int[fibAmount];
+             System.out.println("Your fibonacci sqquence is: ");
+             sequence[0] = 0;
+             sequence[1] = 1;
+             System.out.println(sequence[0]);
+             System.out.println(sequence[1]);
+             
+             
+             for(int counter = 2; counter<sequence.length; counter++)
+             {
+                 sequence[start] = sequence[first] + sequence[second];
+                 System.out.println(sequence[start]);
+                 first++;
+                 second++;
+                 start++;
+             }
+             
+            
+                     
+             
+             
+
+             
+         break;
    }
     
 

@@ -30,6 +30,8 @@ public class tuna
         return randomNumber;
     }
     
+    
+    
     public String getName()
     {
         return girlName;
