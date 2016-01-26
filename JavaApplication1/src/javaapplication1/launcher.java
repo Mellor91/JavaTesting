@@ -19,7 +19,7 @@ public class launcher
      */
     public static void main(String[] args) 
     {
-     int task = 6;
+     int task = 7;
         
      switch(task)
         {
@@ -51,6 +51,10 @@ public class launcher
                 
             case 6:
                 System.out.println(average(1,2,3,4,5,6,7,8,9));
+                break;
+                
+            case 7:
+                time();
                 break;
         }
     }  
@@ -200,5 +204,14 @@ public class launcher
             total+=x;
         }
         return total/numbers.length;
+    }
+    
+    public static void time()
+    {
+        time timeObject = new time();
+        
+        timeObject.setTime(9, 27, 6);
+        System.out.println(timeObject.to24hour());
+        System.out.println(timeObject.to12hour());
     }
 }
